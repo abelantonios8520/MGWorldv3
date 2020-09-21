@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6666</color>
+    <color name="colorPrimaryDark">#F40303</color>
+    <color name="colorAccent">#FFCC99</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlueLight">#03A9F4</color>
+    <color name="colorTrans">#00000000 </color>
+
+    <color name="colorCoral">#FF6666</color>
+    <color name="colorGriz">#669999</color>
+    <color name="colorAmarillo">#99FF33</color>
+    <color name="colorCaqui">#FFCC99</color>
+    <color name="colorNaranja">#FF8000</color>
+
+</resources>
