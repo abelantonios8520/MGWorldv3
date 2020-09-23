@@ -1,6 +1,5 @@
 package com.abelsalcedo.mgworldv2.Adapter;
 
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -16,8 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.abelsalcedo.mgworldv2.Model.Chat;
 import com.abelsalcedo.mgworldv2.Model.Cliente;
-import com.abelsalcedo.mgworldv2.Model.User;
-import com.abelsalcedo.mgworldv2.Notifications.MessageActivity;
+import com.abelsalcedo.mgworldv2.MessageActivity;
 import com.abelsalcedo.mgworldv2.R;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;

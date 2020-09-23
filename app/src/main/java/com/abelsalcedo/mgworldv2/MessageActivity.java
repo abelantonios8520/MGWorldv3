@@ -1,4 +1,4 @@
-package com.abelsalcedo.mgworldv2.Notifications;
+package com.abelsalcedo.mgworldv2;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,9 +16,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.abelsalcedo.mgworldv2.MainActivityFragment;
 import com.abelsalcedo.mgworldv2.Model.Cliente;
-import com.abelsalcedo.mgworldv2.R;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
