@@ -152,7 +152,7 @@ public class UsersFragment extends Fragment {
                 if (search_users.getText().toString().equals("")) {
                     mUsers.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Client cliente = snapshot.getValue(Cliente.class);
+                        Cliente cliente = snapshot.getValue(Cliente.class);
 
                         if (cliente!= null && cliente.getId()!=null && firebaseUser!=null && !cliente.getId().equals(firebaseUser.getUid())) {
                             mUsers.add(cliente);

@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abelsalcedo.mgworldv2.MainActivityFragment;
 import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
 import com.abelsalcedo.mgworldv2.providers.TokenProvider;
@@ -151,7 +152,7 @@ public class MapClienteActivity extends AppCompatActivity implements OnMapReadyC
         mGeofireProvider = new GeofireProvider("active_colaboradores");
         mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
         mClienteProvider = new ClienteProvider();
-
+        mTokenProvider = new TokenProvider();
         mMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mMapFragment.getMapAsync(this);
         mButtonRequestColaborador = findViewById(R.id.btnRequestColaborador);
@@ -524,7 +525,8 @@ public class MapClienteActivity extends AppCompatActivity implements OnMapReadyC
             startActivity(intent);
         }
         if (item.getItemId() == R.id.action_history) {
-            Intent intent = new Intent(MapClienteActivity.this, HistoryBookingClienteActivity.class);
+            Intent intent = new Intent(MapClienteActivity.this, MainActivityFragment.class);
+//            Intent intent = new Intent(MapClienteActivity.this, HistoryBookingClienteActivity.class);
             startActivity(intent);
         }
 

@@ -132,21 +132,21 @@ public class MessageActivity extends AppCompatActivity {
         });
 
 
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(id);
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Cliente cliente = dataSnapshot.getValue(Cliente.class);
                 username.setText(cliente.getUsername());
-                if (user.getImageURL().equals("default")){
+                if (cliente.getImageURL().equals("default")){
                     profile_image.setImageResource(R.drawable.profile_img);
                 } else {
                     //and this
-                    Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
+                    Glide.with(getApplicationContext()).load(cliente.getImageURL()).into(profile_image);
                 }
 
-                readMesagges(fuser.getUid(), userid, user.getImageURL());
+                readMesagges(fuser.getUid(), id, cliente.getImageURL());
             }
 
             @Override
@@ -155,17 +155,17 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
-        seenMessage(userid);
+        seenMessage(id);
     }
 
-    private void seenMessage(final String userid){
+    private void seenMessage(final String id){
         reference = FirebaseDatabase.getInstance().getReference("Chats");
         seenListener = reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Chat chat = snapshot.getValue(Chat.class);
-                    if (chat.getReceiver().equals(fuser.getUid()) && chat.getSender().equals(userid)){
+                    if (chat.getReceiver().equals(fuser.getUid()) && chat.getSender().equals(id)){
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("isseen", true);
                         snapshot.getRef().updateChildren(hashMap);
@@ -197,13 +197,13 @@ public class MessageActivity extends AppCompatActivity {
         // add user to chat fragment
         final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist")
                 .child(fuser.getUid())
-                .child(userid);
+                .child(id);
 
         chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (!dataSnapshot.exists()){
-                    chatRef.child("id").setValue(userid);
+                    chatRef.child("id").setValue(id);
                 }
             }
 
@@ -214,7 +214,7 @@ public class MessageActivity extends AppCompatActivity {
         });
 
         final DatabaseReference chatRefReceiver = FirebaseDatabase.getInstance().getReference("Chatlist")
-                .child(userid)
+                .child(id)
                 .child(fuser.getUid());
         chatRefReceiver.child("id").setValue(fuser.getUid());
 
@@ -247,7 +247,7 @@ public class MessageActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Token token = snapshot.getValue(Token.class);
                     Data data = new Data(fuser.getUid(), R.drawable.profile_img, username+": "+message, "New Message",
-                            userid);
+                            id);
 
                     Sender sender = new Sender(data, token.getToken());
 
@@ -323,7 +323,7 @@ public class MessageActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         status("online");
-        currentUser(userid);
+        currentUser(id);
     }
 
     @Override

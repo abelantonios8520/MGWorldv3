@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abelsalcedo.mgworldv2.MainActivityFragment;
 import com.abelsalcedo.mgworldv2.R;
 import com.abelsalcedo.mgworldv2.activities.cliente.MapClienteActivity;
 import com.abelsalcedo.mgworldv2.activities.colaborador.MapColaboradorActivity;
@@ -112,7 +113,8 @@ public class LoginActivity extends AppCompatActivity {
                                         if (dataSnapshot.exists()) {
                                             //mostarToastDown("ATENCION", "Este no es un usuario permitido");
                                             Toast.makeText(LoginActivity.this, "Login exitoso cliente", Toast.LENGTH_SHORT).show();
-                                            Intent intent = new Intent(LoginActivity.this, MapClienteActivity.class);
+//                                            Intent intent = new Intent(LoginActivity.this, MapClienteActivity.class);
+                                            Intent intent = new Intent(LoginActivity.this, MainActivityFragment.class);
                                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(intent);
                                         } else {

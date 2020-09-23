@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 public class Cliente {
     String id;
-    String username;
+    static String username;
     String ape;
     String telf;
     String email;

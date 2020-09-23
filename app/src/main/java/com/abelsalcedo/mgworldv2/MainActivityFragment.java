@@ -21,8 +21,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.abelsalcedo.mgworldv2.Fragments.UsersFragment;
-import com.abelsalcedo.mgworldv2.activities.MainActivity;
-import com.abelsalcedo.mgworldv2.Model.User;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.activities.SelectOptionAuthActivity;
 import com.bumptech.glide.Glide;
 import com.abelsalcedo.mgworldv2.Adapter.OnItemClick;
@@ -89,13 +88,13 @@ public class MainActivityFragment extends AppCompatActivity implements OnItemCli
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                username.setText(user.getUsername());
-                if (user.getImageURL().equals("default")){
+                Cliente cliente = dataSnapshot.getValue(Cliente.class);
+                username.setText(cliente.getUsername());
+                if (cliente.getImageURL().equals("default")){
                     profile_image.setImageResource(R.drawable.profile_img);
                 } else {
                     //change this
-                    Glide.with(getApplicationContext()).load(user.getImageURL()).into(profile_image);
+                    Glide.with(getApplicationContext()).load(cliente.getImageURL()).into(profile_image);
                 }
             }
 
