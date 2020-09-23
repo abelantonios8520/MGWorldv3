@@ -19,8 +19,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.bumptech.glide.Glide;
-import com.abelsalcedo.mgworldv2.Model.User;
 import com.abelsalcedo.mgworldv2.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -145,13 +145,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(isAdded()){
-                    User user = dataSnapshot.getValue(User.class);
-                    username.setText(user.getUsername());
-                    bio_et.setText(user.getBio());
-                    if (user.getImageURL().equals("default")){
+                    Cliente cliente = dataSnapshot.getValue(Cliente.class);
+                    username.setText(Cliente.getUsername());
+                    bio_et.setText((CharSequence) cliente.getBio());
+                    if (cliente.getImageURL().equals("default")){
                         image_profile.setImageResource(R.drawable.profile_img);
                     } else {
-                        Glide.with(getContext()).load(user.getImageURL()).into(image_profile);
+                        Glide.with(getContext()).load(cliente.getImageURL()).into(image_profile);
                     }
                 }
             }

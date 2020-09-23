@@ -20,7 +20,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.abelsalcedo.mgworldv2.Adapter.OnItemClick;
 import com.abelsalcedo.mgworldv2.Adapter.UserAdapter;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.Model.User;
+import com.abelsalcedo.mgworldv2.Notifications.Client;
 import com.abelsalcedo.mgworldv2.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -44,7 +46,7 @@ public class UsersFragment extends Fragment {
     TextView es_descp, es_title;
 
     private UserAdapter userAdapter;
-    private List<User> mUsers;
+    private List<Cliente> mUsers;
     static OnItemClick onItemClick;
 
     EditText search_users;
@@ -118,12 +120,12 @@ public class UsersFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mUsers.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    User user = snapshot.getValue(User.class);
+                    Cliente cliente = snapshot.getValue(Cliente.class);
 
-                    assert user != null;
+                    assert cliente != null;
                     assert fuser != null;
-                    if (!user.getId().equals(fuser.getUid())){
-                        mUsers.add(user);
+                    if (!cliente.getId().equals(fuser.getUid())){
+                        mUsers.add(cliente);
                     }
                 }
 
@@ -150,10 +152,10 @@ public class UsersFragment extends Fragment {
                 if (search_users.getText().toString().equals("")) {
                     mUsers.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        User user = snapshot.getValue(User.class);
+                        Client cliente = snapshot.getValue(Cliente.class);
 
-                        if (user!= null && user.getId()!=null && firebaseUser!=null && !user.getId().equals(firebaseUser.getUid())) {
-                            mUsers.add(user);
+                        if (cliente!= null && cliente.getId()!=null && firebaseUser!=null && !cliente.getId().equals(firebaseUser.getUid())) {
+                            mUsers.add(cliente);
                         }
                     }
 

@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abelsalcedo.mgworldv2.Adapter.OnItemClick;
 import com.abelsalcedo.mgworldv2.Adapter.UserAdapter;
 import com.abelsalcedo.mgworldv2.Model.Chatlist;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.Model.User;
 import com.abelsalcedo.mgworldv2.Notifications.Token;
 import com.abelsalcedo.mgworldv2.R;
@@ -39,7 +40,7 @@ public class ChatsFragment extends Fragment {
 
     Typeface MR, MRR;
     private UserAdapter userAdapter;
-    private List<User> mUsers;
+    private List<Cliente> mUsers;
     FrameLayout frameLayout;
     TextView es_descp, es_title;
 
@@ -133,11 +134,11 @@ public class ChatsFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mUsers.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    User user = snapshot.getValue(User.class);
+                    Cliente cliente = snapshot.getValue(Cliente.class);
                     for (Chatlist chatlist : usersList){
-                        if (user!= null && user.getId()!=null && chatlist!=null && chatlist.getId()!= null &&
-                                user.getId().equals(chatlist.getId())){
-                            mUsers.add(user);
+                        if (cliente!= null && cliente.getId()!=null && chatlist!=null && chatlist.getId()!= null &&
+                                cliente.getId().equals(chatlist.getId())){
+                            mUsers.add(cliente);
                         }
                     }
                 }

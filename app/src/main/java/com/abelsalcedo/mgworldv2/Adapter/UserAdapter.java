@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abelsalcedo.mgworldv2.Model.Chat;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.Model.User;
 import com.abelsalcedo.mgworldv2.Notifications.MessageActivity;
 import com.abelsalcedo.mgworldv2.R;
@@ -32,14 +33,14 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<User> mUsers;
+    private List<Cliente> mUsers;
     private boolean ischat;
     private OnItemClick onItemClick;
 
     Typeface MR,MRR;
     String theLastMessage;
 
-    public UserAdapter(Context mContext, OnItemClick onItemClick, List<User> mUsers, boolean ischat){
+    public UserAdapter(Context mContext, OnItemClick onItemClick, List<Cliente> mUsers, boolean ischat){
         this.onItemClick = onItemClick;
         this.mUsers = mUsers;
         this.mContext = mContext;
@@ -62,7 +63,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        final User user = mUsers.get(position);
+        final Cliente user = mUsers.get(position);
         holder.username.setTypeface(MR);
         holder.last_msg.setTypeface(MRR);
 

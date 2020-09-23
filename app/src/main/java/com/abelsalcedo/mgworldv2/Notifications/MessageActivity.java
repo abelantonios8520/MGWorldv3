@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abelsalcedo.mgworldv2.MainActivityFragment;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.R;
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
@@ -68,7 +69,7 @@ public class MessageActivity extends AppCompatActivity {
 
     ValueEventListener seenListener;
 
-    String userid;
+    String id;
 
     APIService apiService;
 
@@ -112,7 +113,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
         intent = getIntent();
-        userid = intent.getStringExtra("userid");
+        id = intent.getStringExtra("userid");
         fuser = FirebaseAuth.getInstance().getCurrentUser();
 
         btn_send.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +123,7 @@ public class MessageActivity extends AppCompatActivity {
                 String msg = text_send.getText().toString();
                 String time = String.valueOf(System.currentTimeMillis());
                 if (!msg.equals("")){
-                    sendMessage(fuser.getUid(), userid, msg, time);
+                    sendMessage(fuser.getUid(), id, msg, time);
                 } else {
                     Toast.makeText(MessageActivity.this, "You can't send empty message", Toast.LENGTH_SHORT).show();
                 }
@@ -136,8 +137,8 @@ public class MessageActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.getValue(User.class);
-                username.setText(user.getUsername());
+                Cliente cliente = dataSnapshot.getValue(Cliente.class);
+                username.setText(cliente.getUsername());
                 if (user.getImageURL().equals("default")){
                     profile_image.setImageResource(R.drawable.profile_img);
                 } else {
@@ -303,9 +304,9 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
-    private void currentUser(String userid){
+    private void currentUser(String id){
         SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
-        editor.putString("currentuser", userid);
+        editor.putString("currentuser", id);
         editor.apply();
     }
 

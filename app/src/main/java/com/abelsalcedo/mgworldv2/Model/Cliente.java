@@ -39,7 +39,7 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 
