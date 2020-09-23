@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.abelsalcedo.mgworldv2.R;
-import com.abelsalcedo.mgworldv2.models.ClienteBooking;
-import com.abelsalcedo.mgworldv2.models.HistoryBooking;
+import com.abelsalcedo.mgworldv2.Model.ClienteBooking;
+import com.abelsalcedo.mgworldv2.Model.HistoryBooking;
 import com.abelsalcedo.mgworldv2.providers.ClienteBookingProvider;
 import com.abelsalcedo.mgworldv2.providers.HistoryBookingProvider;
 import com.google.android.gms.tasks.OnSuccessListener;

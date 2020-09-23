@@ -28,8 +28,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.R;
-import com.abelsalcedo.mgworldv2.models.FCMBody;
-import com.abelsalcedo.mgworldv2.models.FCMResponse;
+import com.abelsalcedo.mgworldv2.Model.FCMBody;
+import com.abelsalcedo.mgworldv2.Model.FCMResponse;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.abelsalcedo.mgworldv2.providers.ClienteBookingProvider;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
@@ -78,9 +78,8 @@ public class MapColaboradorBookingActivity extends AppCompatActivity implements 
     private GeofireProvider mGeofireProvider;
     private ClienteProvider mClienteProvider;
     private ClienteBookingProvider mClienteBookingProvider;
-    private TokenProvider mTokenProvider;
     private NotificationProvider mNotificationProvider;
-
+    private TokenProvider mTokenProvider;
 
     private LocationRequest mLocationRequest;
     private FusedLocationProviderClient mFusedLocation;
@@ -158,7 +157,7 @@ public class MapColaboradorBookingActivity extends AppCompatActivity implements 
 
         mAuthProvider = new AuthProvider();
         mGeofireProvider = new GeofireProvider("colaboradores_working");
-        mTokenProvider = new TokenProvider();
+       // mTokenProvider = new TokenProvider();
         mClienteProvider = new ClienteProvider();
         mClienteBookingProvider = new ClienteBookingProvider();
         mNotificationProvider = new NotificationProvider();
@@ -194,7 +193,7 @@ public class MapColaboradorBookingActivity extends AppCompatActivity implements 
             }
         });
 
-        mButtonFinishBooking.setOnClickListener(new View.OnClickListener() {
+       mButtonFinishBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finishBooking();
@@ -223,7 +222,7 @@ public class MapColaboradorBookingActivity extends AppCompatActivity implements 
         mMap.clear();
         mMap.addMarker(new MarkerOptions().position(mDestinationLatLng).title("Destino").icon(BitmapDescriptorFactory.fromResource(R.drawable.icons_pin_blue)));
         drawRoute(mDestinationLatLng);
-        sendNotification("Viaje iniciado");
+        //sendNotification("Viaje iniciado");
     }
 
     private double getDistanceBetween(LatLng clienteLatLng, LatLng colaboradorLatLng) {
@@ -470,7 +469,7 @@ public class MapColaboradorBookingActivity extends AppCompatActivity implements 
     }
 
     private void sendNotification(final String status) {
-        mTokenProvider.getToken(mExtraClienteId).addListenerForSingleValueEvent(new ValueEventListener() {
+        mTokenProvider.getTokenMG(mExtraClienteId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

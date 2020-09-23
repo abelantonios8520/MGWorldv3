@@ -1,6 +1,6 @@
 package com.abelsalcedo.mgworldv2.providers;
 
-import com.abelsalcedo.mgworldv2.models.FCMBody;
+import com.abelsalcedo.mgworldv2.Model.FCMBody;
 import com.abelsalcedo.mgworldv2.retrofit.IFCMApi;
 import com.abelsalcedo.mgworldv2.retrofit.RetrofitCliente;
 import retrofit2.Call;

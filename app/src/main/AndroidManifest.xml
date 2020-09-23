@@ -16,8 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.FirebaseChat"
-        android:parentActivityName="activities.colaborador.MapColaboradorActivity"/>
+        <activity android:name=".MainActivityFragment"></activity>
+        <activity
+            android:name=".activities.FirebaseChat"
+            android:parentActivityName="activities.colaborador.MapColaboradorActivity" />
         <activity android:name=".activities.ForgotPassActivity" />
         <activity android:name=".activities.colaborador.MapColaboradorBookingActivity" />
         <activity android:name=".activities.colaborador.HistoryBookingColaboradorActivity" />

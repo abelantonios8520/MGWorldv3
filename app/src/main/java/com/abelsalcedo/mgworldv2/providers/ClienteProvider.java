@@ -1,6 +1,6 @@
 package com.abelsalcedo.mgworldv2.providers;
 
-import com.abelsalcedo.mgworldv2.models.Cliente;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

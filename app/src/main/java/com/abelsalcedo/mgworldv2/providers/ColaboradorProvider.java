@@ -1,6 +1,6 @@
 package com.abelsalcedo.mgworldv2.providers;
 
-import com.abelsalcedo.mgworldv2.models.Colaborador;
+import com.abelsalcedo.mgworldv2.Model.Colaborador;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -17,7 +17,7 @@ public class ColaboradorProvider {
 
     public Task<Void> create(Colaborador colaborador) {
         Map<String, Object> map = new HashMap<>();
-        map.put("name", colaborador.getName());
+        map.put("name", colaborador.getUsername());
         map.put("ape", colaborador.getApe());
         map.put("dni", colaborador.getDni());
         map.put("telef", colaborador.getTelf());
@@ -31,8 +31,7 @@ public class ColaboradorProvider {
 
     public Task<Void> update(Colaborador colaborador) {
         Map<String, Object> map = new HashMap<>();
-        map.put("name", colaborador.getName());
-        map.put("image", colaborador.getImage());
+        map.put("name", colaborador.getUsername());
         map.put("ape", colaborador.getApe());
         map.put("telef", colaborador.getTelf());
         return mDatabase.child(colaborador.getId()).updateChildren(map);

@@ -9,7 +9,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.abelsalcedo.mgworldv2.R;
-import com.abelsalcedo.mgworldv2.models.HistoryBooking;
+import com.abelsalcedo.mgworldv2.Model.HistoryBooking;
 import com.abelsalcedo.mgworldv2.providers.ColaboradorProvider;
 import com.abelsalcedo.mgworldv2.providers.HistoryBookingProvider;
 import com.google.firebase.database.DataSnapshot;

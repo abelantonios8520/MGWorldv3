@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.R;
 import com.abelsalcedo.mgworldv2.includes.MyToolbar;
-import com.abelsalcedo.mgworldv2.models.Cliente;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
 import com.google.android.gms.tasks.OnCompleteListener;

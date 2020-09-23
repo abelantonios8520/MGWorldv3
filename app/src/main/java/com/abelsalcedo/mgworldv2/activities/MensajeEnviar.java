@@ -1,6 +1,6 @@
 package com.abelsalcedo.mgworldv2.activities;
 
-import com.abelsalcedo.mgworldv2.models.Mensaje;
+import com.abelsalcedo.mgworldv2.Model.Mensaje;
 
 import java.util.Map;
 

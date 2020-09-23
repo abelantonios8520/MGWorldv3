@@ -3,7 +3,6 @@ package com.abelsalcedo.mgworldv2.activities;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.TextViewRichContentReceiverCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,29 +16,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.R;
-import com.abelsalcedo.mgworldv2.activities.cliente.HistoryBookingDetailClienteActivity;
-import com.abelsalcedo.mgworldv2.activities.cliente.MapClienteActivity;
-import com.abelsalcedo.mgworldv2.activities.cliente.MapClienteBookingActivity;
-import com.abelsalcedo.mgworldv2.activities.colaborador.HistoryBookingDetailColaboradorActivity;
-import com.abelsalcedo.mgworldv2.activities.colaborador.MapColaboradorActivity;
-import com.abelsalcedo.mgworldv2.adapter.AdapterMensajes;
-import com.abelsalcedo.mgworldv2.models.HistoryBooking;
-import com.abelsalcedo.mgworldv2.models.Mensaje;
-import com.abelsalcedo.mgworldv2.models.User;
+import com.abelsalcedo.mgworldv2.Adapter.AdapterMensajes;
+import com.abelsalcedo.mgworldv2.Model.User;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
-import com.abelsalcedo.mgworldv2.providers.ClienteBookingProvider;
-import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
-import com.abelsalcedo.mgworldv2.providers.ColaboradorProvider;
 import com.abelsalcedo.mgworldv2.providers.GeofireProvider;
-import com.abelsalcedo.mgworldv2.providers.HistoryBookingProvider;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,7 +36,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import dmax.dialog.SpotsDialog;
@@ -223,7 +208,7 @@ public class FirebaseChat extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     User user = dataSnapshot.getValue(User.class);
-                    NOMBRE_USUARIO = user.getName();
+                    NOMBRE_USUARIO = user.getUsername();
                     mTextViewName.setText(NOMBRE_USUARIO);
                     mEnviar.setEnabled(true);
                 }
@@ -240,7 +225,7 @@ public class FirebaseChat extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
-                NOMBRE_USUARIO = user.getName();
+                NOMBRE_USUARIO = user.getUsername();
                 mTextViewName.setText(NOMBRE_USUARIO);
                 mEnviar.setEnabled(true);
             }

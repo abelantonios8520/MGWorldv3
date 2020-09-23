@@ -1,7 +1,7 @@
 package com.abelsalcedo.mgworldv2.retrofit;
 
-import com.abelsalcedo.mgworldv2.models.FCMBody;
-import com.abelsalcedo.mgworldv2.models.FCMResponse;
+import com.abelsalcedo.mgworldv2.Model.FCMBody;
+import com.abelsalcedo.mgworldv2.Model.FCMResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;

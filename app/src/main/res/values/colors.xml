@@ -12,5 +12,9 @@
     <color name="colorAmarillo">#99FF33</color>
     <color name="colorCaqui">#FFCC99</color>
     <color name="colorNaranja">#FF8000</color>
-
+    <color name="trans">#00000000</color>
+    <color name="grey">#4D5057</color>
+    <color name="green">#4FC18A</color>
+    <color name="black_shade">#333333</color>
+    <color name="colorBlack">#000000</color>
 </resources>

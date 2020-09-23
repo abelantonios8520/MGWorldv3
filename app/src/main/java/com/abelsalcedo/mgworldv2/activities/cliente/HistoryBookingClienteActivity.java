@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.abelsalcedo.mgworldv2.R;
-import com.abelsalcedo.mgworldv2.adapter.HistoryBookingClienteAdapter;
+import com.abelsalcedo.mgworldv2.Adapter.HistoryBookingClienteAdapter;
 import com.abelsalcedo.mgworldv2.includes.MyToolbar;
-import com.abelsalcedo.mgworldv2.models.HistoryBooking;
+import com.abelsalcedo.mgworldv2.Model.HistoryBooking;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;

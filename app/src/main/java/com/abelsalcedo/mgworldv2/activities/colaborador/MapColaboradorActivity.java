@@ -23,10 +23,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
+import com.abelsalcedo.mgworldv2.providers.TokenProvider;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -49,7 +49,6 @@ import com.abelsalcedo.mgworldv2.activities.MainActivity;
 import com.abelsalcedo.mgworldv2.includes.MyToolbar;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.abelsalcedo.mgworldv2.providers.GeofireProvider;
-import com.abelsalcedo.mgworldv2.providers.TokenProvider;
 
 public class MapColaboradorActivity extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -58,7 +57,6 @@ public class MapColaboradorActivity extends AppCompatActivity implements OnMapRe
     private AuthProvider mAuthProvider;
     private GeofireProvider mGeofireProvider;
     private TokenProvider mTokenProvider;
-
     private LocationRequest mLocationRequest;
     private FusedLocationProviderClient mFusedLocation;
 
@@ -117,7 +115,7 @@ public class MapColaboradorActivity extends AppCompatActivity implements OnMapRe
 
         mAuthProvider = new AuthProvider();
         mGeofireProvider = new GeofireProvider("active_colaboradores");
-        mTokenProvider = new TokenProvider();
+        //mTokenProvider = new TokenProvider();
         //mbtnChat = findViewById(R.id.imgBtnChat);
         mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
 

@@ -1,6 +1,6 @@
 package com.abelsalcedo.mgworldv2.providers;
 
-import com.abelsalcedo.mgworldv2.models.Token;
+import com.abelsalcedo.mgworldv2.Model.TokenMG;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -15,19 +15,19 @@ public class TokenProvider {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Tokens");
     }
 
-    public void create(final String idUser){
-        if(idUser == null) return;
+    public void create(final String idUser) {
+        if (idUser == null) return;
         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
             @Override
             public void onSuccess(InstanceIdResult instanceIdResult) {
-                Token token = new Token(instanceIdResult.getToken());
+                TokenMG token = new TokenMG(instanceIdResult.getToken());
                 mDatabase.child(idUser).setValue(token);
             }
         });
     }
 
-    public DatabaseReference getToken(String idUser) {
+    public DatabaseReference getTokenMG(String idUser) {
         return mDatabase.child(idUser);
     }
-
 }
+

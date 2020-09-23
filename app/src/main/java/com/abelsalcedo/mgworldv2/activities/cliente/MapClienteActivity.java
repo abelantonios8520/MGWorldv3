@@ -33,13 +33,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
-import com.abelsalcedo.mgworldv2.models.Token;
-import com.abelsalcedo.mgworldv2.models.User;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
 import com.abelsalcedo.mgworldv2.providers.TokenProvider;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQueryEventListener;
-import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -61,7 +58,6 @@ import com.google.android.libraries.places.api.model.RectangularBounds;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.abelsalcedo.mgworldv2.R;
@@ -73,7 +69,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.maps.android.SphericalUtil;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -85,12 +80,11 @@ public class MapClienteActivity extends AppCompatActivity implements OnMapReadyC
     private SupportMapFragment mMapFragment;
     private AuthProvider mAuthProvider;
     ClienteProvider mClienteProvider;
-
+    private TokenProvider mTokenProvider;
     private LocationRequest mLocationRequest;
     private FusedLocationProviderClient mFusedLocation;
 
     private GeofireProvider mGeofireProvider;
-    private TokenProvider mTokenProvider;
 
     private final static int LOCATION_REQUEST_CODE = 1;
     private final static int SETTINGS_REQUEST_CODE = 2;
@@ -155,7 +149,6 @@ public class MapClienteActivity extends AppCompatActivity implements OnMapReadyC
 
         mAuthProvider = new AuthProvider();
         mGeofireProvider = new GeofireProvider("active_colaboradores");
-        mTokenProvider = new TokenProvider();
         mFusedLocation = LocationServices.getFusedLocationProviderClient(this);
         mClienteProvider = new ClienteProvider();
 

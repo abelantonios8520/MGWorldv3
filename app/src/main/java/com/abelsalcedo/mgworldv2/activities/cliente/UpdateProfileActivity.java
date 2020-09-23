@@ -6,26 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.FileUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.abelsalcedo.mgworldv2.R;
 import com.abelsalcedo.mgworldv2.includes.MyToolbar;
-import com.abelsalcedo.mgworldv2.models.Cliente;
+import com.abelsalcedo.mgworldv2.Model.Cliente;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
 import com.abelsalcedo.mgworldv2.providers.ImagesProvider;
-import com.abelsalcedo.mgworldv2.utils.CompressorBitmapImage;
 import com.abelsalcedo.mgworldv2.utils.FileUtil;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -33,8 +29,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;

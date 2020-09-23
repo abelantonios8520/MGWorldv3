@@ -44,7 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     AlertDialog mDialog;
 
     SharedPreferences mPref;
-    NiftyDialogBuilder materialDesignAnimatedDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +58,6 @@ public class LoginActivity extends AppCompatActivity {
         mCircleImageBack = findViewById(R.id.circleImageBack);
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        //materialDesignAnimatedDialog = NiftyDialogBuilder.getInstance(this);
 
         mDialog = new SpotsDialog.Builder().setContext(LoginActivity.this).setMessage("Espere un momento").build();
         mPref = getApplicationContext().getSharedPreferences("typeUser", MODE_PRIVATE);

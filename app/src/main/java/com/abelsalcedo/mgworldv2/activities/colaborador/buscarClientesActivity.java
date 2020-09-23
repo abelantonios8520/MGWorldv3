@@ -5,7 +5,6 @@ package com.abelsalcedo.mgworldv2.activities.colaborador;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.abelsalcedo.mgworldv2.R;
 import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
-import com.abelsalcedo.mgworldv2.adapter.AdapterPedidos;
+import com.abelsalcedo.mgworldv2.Adapter.AdapterPedidos;
 import com.abelsalcedo.mgworldv2.pojo.Pedidos;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

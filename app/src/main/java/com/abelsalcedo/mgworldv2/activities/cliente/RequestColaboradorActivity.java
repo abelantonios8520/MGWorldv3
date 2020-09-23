@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abelsalcedo.mgworldv2.providers.TokenProvider;
 import com.airbnb.lottie.LottieAnimationView;
 import com.firebase.geofire.GeoLocation;
 import com.firebase.geofire.GeoQueryEventListener;
@@ -20,15 +21,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 import com.abelsalcedo.mgworldv2.R;
-import com.abelsalcedo.mgworldv2.models.ClienteBooking;
-import com.abelsalcedo.mgworldv2.models.FCMBody;
-import com.abelsalcedo.mgworldv2.models.FCMResponse;
+import com.abelsalcedo.mgworldv2.Model.ClienteBooking;
+import com.abelsalcedo.mgworldv2.Model.FCMBody;
+import com.abelsalcedo.mgworldv2.Model.FCMResponse;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.abelsalcedo.mgworldv2.providers.ClienteBookingProvider;
 import com.abelsalcedo.mgworldv2.providers.GeofireProvider;
 import com.abelsalcedo.mgworldv2.providers.GoogleApiProvider;
 import com.abelsalcedo.mgworldv2.providers.NotificationProvider;
-import com.abelsalcedo.mgworldv2.providers.TokenProvider;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -89,7 +89,7 @@ public class RequestColaboradorActivity extends AppCompatActivity {
         mDestinationLatLng = new LatLng(mExtraDestinationLat, mExtraDestinationLng);
 
         mGeofireProvider = new GeofireProvider("active_colaboradores");
-        mTokenProvider = new TokenProvider();
+        //mTokenProvider = new TokenProvider();
         mNotificationProvider = new NotificationProvider();
         mClienteBookingProvider = new ClienteBookingProvider();
         mAuthProvider = new AuthProvider();
@@ -183,7 +183,7 @@ public class RequestColaboradorActivity extends AppCompatActivity {
                     JSONObject duration = leg.getJSONObject("duration");
                     String distanceText = distance.getString("text");
                     String durationText = duration.getString("text");
-                    sendNotification(durationText, distanceText);
+                    //sendNotification(durationText, distanceText);
 
                 } catch (Exception e) {
                     Log.d("Error", "Error encontrado " + e.getMessage());
@@ -199,8 +199,8 @@ public class RequestColaboradorActivity extends AppCompatActivity {
 
     }
 
-    private void sendNotificationCancel() {
-        mTokenProvider.getToken(mIdColaboradorFound).addListenerForSingleValueEvent(new ValueEventListener() {
+   private void sendNotificationCancel() {
+        mTokenProvider.getTokenMG(mIdColaboradorFound).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -248,7 +248,7 @@ public class RequestColaboradorActivity extends AppCompatActivity {
     }
 
     private void sendNotification(final String time, final String km) {
-        mTokenProvider.getToken(mIdColaboradorFound).addListenerForSingleValueEvent(new ValueEventListener() {
+        mTokenProvider.getTokenMG(mIdColaboradorFound).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.R;
 import com.abelsalcedo.mgworldv2.includes.MyToolbar;
-import com.abelsalcedo.mgworldv2.models.Colaborador;
+import com.abelsalcedo.mgworldv2.Model.Colaborador;
 import com.abelsalcedo.mgworldv2.providers.AuthProvider;
 import com.abelsalcedo.mgworldv2.providers.ColaboradorProvider;
 import com.abelsalcedo.mgworldv2.providers.ImagesProvider;
@@ -155,8 +155,7 @@ public class UpdateProfileColaboradorActivity extends AppCompatActivity {
                         public void onSuccess(Uri uri) {
                             String image = uri.toString();
                             Colaborador colaborador = new Colaborador();
-                            colaborador.setImage(image);
-                            colaborador.setName(mName);
+                            colaborador.setUsername(mName);
                             colaborador.setId(mAuthProvider.getId());
                             colaborador.setApe(mApellido);
                             colaborador.setTelf(mTelefono);
