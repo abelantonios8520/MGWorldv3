@@ -38,7 +38,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UpdateProfileActivity extends AppCompatActivity {
     private ImageView mImageViewProfile;
     private Button mButtonUpdate;
-    private TextView mTextViewName, mview_bio_et;
+    private TextView mTextViewName;
+    private View mview_bio_et;
     private CircleImageView mCircleImageBack;
 
     private ClienteProvider mClienteProvider;

@@ -1,5 +1,6 @@
 package com.abelsalcedo.mgworldv2.Model;
 
+import android.view.View;
 import android.widget.TextView;
 
 public class Cliente {
@@ -9,15 +10,15 @@ public class Cliente {
     String telf;
     String email;
     String gustos;
-    private String imageURL;
-    private String status;
-    private String search;
-    private String bio;
+    String imageURL;
+    String status;
+    String search;
+    View bio;
 
     public Cliente() {
     }
 
-    public Cliente(String id, String username, String ape, String telf, String email, String gustos, String imageURL, String status, String search, String bio) {
+    public Cliente(String id, String username, String ape, String telf, String email) {
         this.id = id;
         this.username = username;
         this.ape = ape;
@@ -102,11 +103,11 @@ public class Cliente {
         this.search = search;
     }
 
-    public String getBio() {
+    public View getBio() {
         return bio;
     }
 
-    public void setBio(TextView bio) {
+    public void setBio(View bio) {
         this.bio = bio;
     }
 }

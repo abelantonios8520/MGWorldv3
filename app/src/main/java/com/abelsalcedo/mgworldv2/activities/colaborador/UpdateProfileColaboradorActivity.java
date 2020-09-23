@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
@@ -38,7 +39,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UpdateProfileColaboradorActivity extends AppCompatActivity {
     private ImageView mImageViewProfile;
     private Button mButtonUpdate;
-    private TextView mTextViewName, mview_bio_et;
+    private TextView mTextViewName;
+    private View mview_bio_et;
     private TextView mTextViewApe;
     private TextView mTextViewTelf;
     private CircleImageView mCircleImageBack;
@@ -55,6 +57,7 @@ public class UpdateProfileColaboradorActivity extends AppCompatActivity {
     private String mApellido;
     private String mTelefono;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

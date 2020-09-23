@@ -17,7 +17,7 @@ public class ClienteProvider {
 
     public Task<Void> create(Cliente cliente) {
         Map<String, Object> map = new HashMap<>();
-        map.put("name", cliente.getName());
+        map.put("name", cliente.getUsername());
         map.put("ape", cliente.getApe());
         map.put("telef", cliente.getTelf());
         map.put("email", cliente.getEmail());
@@ -26,8 +26,9 @@ public class ClienteProvider {
 
     public Task<Void> update(Cliente cliente) {
         Map<String, Object> map = new HashMap<>();
-        map.put("name", cliente.getName());
-        map.put("image", cliente.getImage());
+        map.put("name", cliente.getUsername());
+        map.put("image", cliente.getImageURL());
+        map.put("bio" , cliente.getBio());
         map.put("gustos", cliente.getGustos());
         return mDatabase.child(cliente.getId()).updateChildren(map);
     }

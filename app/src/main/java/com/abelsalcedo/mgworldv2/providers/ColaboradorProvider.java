@@ -34,6 +34,7 @@ public class ColaboradorProvider {
         map.put("name", colaborador.getUsername());
         map.put("ape", colaborador.getApe());
         map.put("telef", colaborador.getTelf());
+        map.put("bio" , colaborador.getBio());
         return mDatabase.child(colaborador.getId()).updateChildren(map);
     }
 

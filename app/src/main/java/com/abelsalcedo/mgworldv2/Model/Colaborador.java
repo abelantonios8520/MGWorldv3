@@ -1,6 +1,6 @@
 package com.abelsalcedo.mgworldv2.Model;
 
-import android.widget.TextView;
+import android.view.View;
 
 public class Colaborador {
 
@@ -10,17 +10,17 @@ public class Colaborador {
     String dni;
     String telf;
     String email;
-    private String imageURL;
-    private String status;
-    private String search;
-    private String bio;
+    String imageURL;
+    String status;
+    String search;
+    View bio;
 
     public Colaborador() {
     }
 
-    public Colaborador(String id, String name, String ape, String dni, String telf, String email) {
+    public Colaborador(String id, String username, String ape, String dni, String telf, String email) {
         this.id = id;
-        this.username = name;
+        this.username = username;
         this.ape = ape;
         this.dni = dni;
         this.telf = telf;
@@ -103,11 +103,11 @@ public class Colaborador {
         this.search = search;
     }
 
-    public String getBio() {
+    public View getBio() {
         return bio;
     }
 
-    public void setBio(TextView bio) {
+    public void setBio(View bio) {
         this.bio = bio;
     }
 }
