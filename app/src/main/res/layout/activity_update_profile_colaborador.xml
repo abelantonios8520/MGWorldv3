@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/colorAccent"
     tools:context=".activities.colaborador.UpdateProfileColaboradorActivity">
 
     <include layout="@layout/action_bar_toollbar"/>
@@ -118,6 +119,37 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/bio_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:text="Bio"
+            android:layout_below="@id/view_username"
+            android:textColor="@color/grey"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/margin_10_dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_bio_et"
+            android:enabled="false"
+            android:textCursorDrawable="@null"
+            android:text=""
+            android:hint=""
+            android:maxLength="60"
+            android:minLines="4"
+            android:padding="@dimen/padding_10_dp"
+            android:maxLines="4"
+            android:gravity="top"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="17sp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_below="@id/bio_tv"
+            android:layout_centerHorizontal="true"
+            />
     </LinearLayout>
 
     <Button

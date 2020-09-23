@@ -38,7 +38,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UpdateProfileColaboradorActivity extends AppCompatActivity {
     private ImageView mImageViewProfile;
     private Button mButtonUpdate;
-    private TextView mTextViewName;
+    private TextView mTextViewName, mview_bio_et;
     private TextView mTextViewApe;
     private TextView mTextViewTelf;
     private CircleImageView mCircleImageBack;
@@ -67,7 +67,7 @@ public class UpdateProfileColaboradorActivity extends AppCompatActivity {
         mTextViewApe = findViewById(R.id.textInputApe);
         mTextViewTelf = findViewById(R.id.textInputTelef);
         mCircleImageBack = findViewById(R.id.circleImageBack);
-
+        mview_bio_et = findViewById(R.id.view_bio_et);
         mColaboradorProvider = new ColaboradorProvider();
         mAuthProvider = new AuthProvider();
         mImagesProvider = new ImagesProvider("Colaborador_image");
@@ -153,9 +153,10 @@ public class UpdateProfileColaboradorActivity extends AppCompatActivity {
                     mImagesProvider.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            String image = uri.toString();
+                            String imageUrl = uri.toString();
                             Colaborador colaborador = new Colaborador();
                             colaborador.setUsername(mName);
+                            colaborador.setBio(mview_bio_et);
                             colaborador.setId(mAuthProvider.getId());
                             colaborador.setApe(mApellido);
                             colaborador.setTelf(mTelefono);

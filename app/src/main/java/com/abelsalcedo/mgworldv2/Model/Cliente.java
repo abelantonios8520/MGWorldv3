@@ -1,12 +1,13 @@
 package com.abelsalcedo.mgworldv2.Model;
 
+import android.widget.TextView;
+
 public class Cliente {
     String id;
     String username;
     String ape;
     String telf;
     String email;
-    String image;
     String gustos;
     private String imageURL;
     private String status;
@@ -16,13 +17,12 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String id, String name, String ape, String telf, String email) {
+    public Cliente(String id, String username, String ape, String telf, String email, String gustos, String imageURL, String status, String search, String bio) {
         this.id = id;
-        this.username = name;
+        this.username = username;
         this.ape = ape;
         this.telf = telf;
         this.email = email;
-        this.image = image;
         this.gustos = gustos;
         this.imageURL = imageURL;
         this.status = status;
@@ -38,12 +38,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getName() {
+    public String getUsername() {
         return username;
     }
 
-    public void setName(String name) {
-        this.username = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getApe() {
@@ -68,14 +68,6 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getGustos() {
@@ -114,7 +106,7 @@ public class Cliente {
         return bio;
     }
 
-    public void setBio(String bio) {
+    public void setBio(TextView bio) {
         this.bio = bio;
     }
 }

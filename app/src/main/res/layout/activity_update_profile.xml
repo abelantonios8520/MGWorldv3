@@ -51,6 +51,27 @@
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/view_bio_et"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/margin_10_dp"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:textCursorDrawable="@null"
+            android:text=""
+            android:hint=""
+            android:maxLength="60"
+            android:minLines="4"
+            android:padding="@dimen/padding_10_dp"
+            android:maxLines="4"
+            android:gravity="top"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            android:background="@drawable/rounded_edittext"
+            android:layout_below="@id/bio_tv"
+            android:layout_centerHorizontal="true"
+            />
     </LinearLayout>
 
     <Button

@@ -29,14 +29,14 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
     String uid;
     DatabaseReference reference;
     TextView username, bio_et;
-    private ImagesProvider mImagesProvider;
+    ImageView profile_img;
     static Context mContext;
     private ClienteProvider mClienteProvider;
     private AuthProvider mAuthProvider;
-//    private ProgressDialog mProgressDialog;
-//    public ViewProfileActivity() {
-//
-//    }
+
+    public ViewProfileActivity() {
+
+    }
 
     public static ViewProfileActivity newInstance(String uid, Context context) {
 
@@ -53,17 +53,14 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
         super.onCreate(savedInstanceState);
         mClienteProvider = new ClienteProvider();
         mAuthProvider = new AuthProvider();
-        mImagesProvider = new ImagesProvider("cliente_image");
-
+//        mImagesProvider = new ImagesProvider("cliente_image");
+//
 //        mProgressDialog = new ProgressDialog(this);
-        getClienteInfo();
+//        getClienteInfo();
 
     }
 
-    private void getClienteInfo() {
-    }
-
-    /*@Nullable
+    @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_view_profile,container,false);
@@ -96,5 +93,5 @@ public class ViewProfileActivity extends BottomSheetDialogFragment {
         }
 
         return view;
-    }*/
+    }
 }

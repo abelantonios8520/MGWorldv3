@@ -1,5 +1,7 @@
 package com.abelsalcedo.mgworldv2.Model;
 
+import android.widget.TextView;
+
 public class Colaborador {
 
     String id;
@@ -105,7 +107,7 @@ public class Colaborador {
         return bio;
     }
 
-    public void setBio(String bio) {
+    public void setBio(TextView bio) {
         this.bio = bio;
     }
 }

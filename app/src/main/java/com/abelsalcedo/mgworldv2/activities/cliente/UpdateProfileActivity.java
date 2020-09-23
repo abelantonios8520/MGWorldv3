@@ -38,7 +38,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UpdateProfileActivity extends AppCompatActivity {
     private ImageView mImageViewProfile;
     private Button mButtonUpdate;
-    private TextView mTextViewName;
+    private TextView mTextViewName, mview_bio_et;
     private CircleImageView mCircleImageBack;
 
     private ClienteProvider mClienteProvider;
@@ -61,6 +61,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         mButtonUpdate = findViewById(R.id.btnUpdateProfile);
         mTextViewName = findViewById(R.id.textInputName);
         mCircleImageBack = findViewById(R.id.circleImageBack);
+        mview_bio_et = findViewById(R.id.view_bio_et);
 
         mClienteProvider = new ClienteProvider();
         mAuthProvider = new AuthProvider();
@@ -141,10 +142,11 @@ public class UpdateProfileActivity extends AppCompatActivity {
                     mImagesProvider.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            String image = uri.toString();
+                            String imageUrl = uri.toString();
                             Cliente cliente = new Cliente();
-                            cliente.setImage(image);
-                            cliente.setName(mName);
+                            cliente.setImageURL(imageUrl);
+                            cliente.setUsername(mName);
+                            cliente.setBio(mview_bio_et);
                             cliente.setId(mAuthProvider.getId());
                             mClienteProvider.update(cliente).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
