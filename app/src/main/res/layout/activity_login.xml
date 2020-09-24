@@ -32,12 +32,12 @@
                 android:id="@+id/textViewNameBookingDetail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="MGWORL"
+                android:layout_margin="50dp"
+                android:text="MGWORLD"
                 android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textSize="26sp"
-                android:textStyle="bold"
-                android:layout_margin="50dp" />
+                android:textStyle="bold" />
 
         </com.github.florent37.shapeofview.shapes.ArcView>
 
