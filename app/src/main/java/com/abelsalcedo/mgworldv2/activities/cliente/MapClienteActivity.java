@@ -35,7 +35,6 @@ import android.widget.Toast;
 
 import com.abelsalcedo.mgworldv2.Fragments.ChatsFragment;
 import com.abelsalcedo.mgworldv2.MainActivityFragment;
-import com.abelsalcedo.mgworldv2.Notifications.MessageActivity;
 import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
 import com.abelsalcedo.mgworldv2.activities.Messenger_chat;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
