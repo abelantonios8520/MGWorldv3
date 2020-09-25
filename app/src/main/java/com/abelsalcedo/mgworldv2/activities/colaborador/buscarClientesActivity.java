@@ -12,6 +12,7 @@ import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abelsalcedo.mgworldv2.MainActivityFragment;
 import com.abelsalcedo.mgworldv2.R;
 import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
 import com.abelsalcedo.mgworldv2.Adapter.AdapterPedidos;
@@ -100,7 +101,7 @@ public class buscarClientesActivity extends AppCompatActivity implements Adapter
     @Override
     public void pedidosClick(int position) {
         Log.d(TAG, "pedidosClick: clicked.");
-        Intent intent = new Intent(this, FirebaseChat.class);
+        Intent intent = new Intent(this, MainActivityFragment.class);
         intent.putExtra("some_object", "something else");
         startActivity(intent);
     }

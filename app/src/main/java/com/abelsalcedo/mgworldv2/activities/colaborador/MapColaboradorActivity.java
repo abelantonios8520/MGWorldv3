@@ -135,7 +135,7 @@ public class MapColaboradorActivity extends AppCompatActivity implements OnMapRe
         });
 
 
-        generateToken();
+      //  generateToken();
         isColaboradorWorking();
 
     }
@@ -361,7 +361,7 @@ public class MapColaboradorActivity extends AppCompatActivity implements OnMapRe
         finish();
     }
 
-    void generateToken() {
-        mTokenProvider.create(mAuthProvider.getId());
-    }
+   // void generateToken() {
+   //     mTokenProvider.create(mAuthProvider.getId());
+   // }
 }

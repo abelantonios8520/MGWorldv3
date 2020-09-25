@@ -213,7 +213,6 @@ public class FirebaseChat extends AppCompatActivity {
                     mEnviar.setEnabled(true);
                 }
 
-
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
 
