@@ -6,7 +6,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,10 +32,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.abelsalcedo.mgworldv2.Fragments.ChatsFragment;
 import com.abelsalcedo.mgworldv2.MainActivityFragment;
-import com.abelsalcedo.mgworldv2.activities.FirebaseChat;
-import com.abelsalcedo.mgworldv2.activities.Messenger_chat;
 import com.abelsalcedo.mgworldv2.providers.ClienteProvider;
 import com.abelsalcedo.mgworldv2.providers.TokenProvider;
 import com.firebase.geofire.GeoLocation;
@@ -264,7 +260,7 @@ public class MapClienteActivity extends AppCompatActivity implements OnMapReadyC
             intent.putExtra("destination", mDestination);
             startActivity(intent);
         } else {
-            Intent intent = new Intent(MapClienteActivity.this, Messenger_chat.class);
+            Intent intent = new Intent(MapClienteActivity.this, MainActivityFragment.class);
             Toast.makeText(this, "Debe seleccionar el lugar de recogida y el destino", Toast.LENGTH_SHORT).show();
             startActivity(intent);
         }

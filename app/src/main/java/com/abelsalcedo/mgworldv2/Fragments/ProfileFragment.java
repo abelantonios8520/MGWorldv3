@@ -146,13 +146,13 @@ public class ProfileFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(isAdded()){
                     Cliente cliente = dataSnapshot.getValue(Cliente.class);
-                    username.setText(Cliente.getUsername());
+                    username.setText(cliente.getUsername());
                     bio_et.setText((CharSequence) cliente.getBio());
-                    if (cliente.getImageURL().equals("default")){
+                  /*  if (cliente.getImageURL().equals("default")){
                         image_profile.setImageResource(R.drawable.profile_img);
                     } else {
                         Glide.with(getContext()).load(cliente.getImageURL()).into(image_profile);
-                    }
+                    }*/
                 }
             }
 

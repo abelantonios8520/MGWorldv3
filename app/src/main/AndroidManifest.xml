@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.Messenger_chat"></activity>
         <activity android:name=".MainActivityFragment" />
         <activity
             android:name=".activities.FirebaseChat"

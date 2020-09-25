@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                 mDialog.hide();
                 if (task.isSuccessful()) {
                     String id = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    Cliente cliente = new Cliente(id, name, ape, telef, email);
+                    Cliente cliente = new Cliente();
                     create(cliente);
                     Toast.makeText(RegisterActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
                 } else {

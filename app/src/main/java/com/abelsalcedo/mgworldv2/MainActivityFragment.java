@@ -27,7 +27,9 @@ import com.bumptech.glide.Glide;
 import com.abelsalcedo.mgworldv2.Adapter.OnItemClick;
 import com.abelsalcedo.mgworldv2.Fragments.ChatsFragment;
 import com.abelsalcedo.mgworldv2.Fragments.ProfileFragment;
+import com.abelsalcedo.mgworldv2.Fragments.UsersFragment;
 import com.abelsalcedo.mgworldv2.Model.Chat;
+import com.abelsalcedo.mgworldv2.Model.User;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -79,6 +81,7 @@ public class MainActivityFragment extends AppCompatActivity implements OnItemCli
 
             }
         });
+
         username = findViewById(R.id.username);
         username.setTypeface(MR);
 
@@ -90,12 +93,13 @@ public class MainActivityFragment extends AppCompatActivity implements OnItemCli
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Cliente cliente = dataSnapshot.getValue(Cliente.class);
                 username.setText(cliente.getUsername());
-                if (cliente.getImageURL().equals("default")){
+               /* if (cliente.getImageURL().equals("default")){
                     profile_image.setImageResource(R.drawable.profile_img);
                 } else {
                     //change this
                     Glide.with(getApplicationContext()).load(cliente.getImageURL()).into(profile_image);
-                }
+                }*/
+
             }
 
             @Override
@@ -103,6 +107,7 @@ public class MainActivityFragment extends AppCompatActivity implements OnItemCli
 
             }
         });
+
 
 
         reference = FirebaseDatabase.getInstance().getReference("Chats");

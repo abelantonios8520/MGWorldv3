@@ -39,7 +39,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
     private ImageView mImageViewProfile;
     private Button mButtonUpdate;
     private TextView mTextViewName;
-    private View mview_bio_et;
+    private String mview_bio_et;
     private CircleImageView mCircleImageBack;
 
     private ClienteProvider mClienteProvider;
@@ -62,7 +62,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
         mButtonUpdate = findViewById(R.id.btnUpdateProfile);
         mTextViewName = findViewById(R.id.textInputName);
         mCircleImageBack = findViewById(R.id.circleImageBack);
-        mview_bio_et = findViewById(R.id.view_bio_et);
+        //mview_bio_et = findViewById(R.id.view_bio_et);
 
         mClienteProvider = new ClienteProvider();
         mAuthProvider = new AuthProvider();

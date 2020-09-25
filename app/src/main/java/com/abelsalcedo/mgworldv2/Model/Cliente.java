@@ -1,11 +1,11 @@
 package com.abelsalcedo.mgworldv2.Model;
 
 import android.view.View;
-import android.widget.TextView;
 
 public class Cliente {
+
     String id;
-    static String username;
+    String username;
     String ape;
     String telf;
     String email;
@@ -13,12 +13,13 @@ public class Cliente {
     String imageURL;
     String status;
     String search;
-    View bio;
+    String bio;
 
-    public Cliente() {
+    public Cliente(){
+
     }
 
-    public Cliente(String id, String username, String ape, String telf, String email) {
+    public Cliente(String id, String username, String ape, String telf, String email, String gustos, String imageURL, String status, String search, String bio) {
         this.id = id;
         this.username = username;
         this.ape = ape;
@@ -39,7 +40,7 @@ public class Cliente {
         this.id = id;
     }
 
-    public static String getUsername() {
+    public String getUsername() {
         return username;
     }
 
@@ -103,11 +104,11 @@ public class Cliente {
         this.search = search;
     }
 
-    public View getBio() {
+    public String getBio() {
         return bio;
     }
 
-    public void setBio(View bio) {
+    public void setBio(String bio) {
         this.bio = bio;
     }
 }
