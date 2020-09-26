@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -73,7 +74,7 @@ public class MainActivityFragment extends AppCompatActivity implements OnItemCli
         final TabLayout tabLayout = findViewById(R.id.tab_layout);
         final ViewPager viewPager = findViewById(R.id.view_pager);
 
-        profile_image.setOnClickListener(new View.OnClickListener() {
+        profile_image.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 TabLayout.Tab tab = tabLayout.getTabAt(2);
@@ -93,12 +94,12 @@ public class MainActivityFragment extends AppCompatActivity implements OnItemCli
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Cliente cliente = dataSnapshot.getValue(Cliente.class);
                 username.setText(cliente.getUsername());
-               /* if (cliente.getImageURL().equals("default")){
+                if (cliente.getImageURL().equals("default")){
                     profile_image.setImageResource(R.drawable.profile_img);
                 } else {
                     //change this
                     Glide.with(getApplicationContext()).load(cliente.getImageURL()).into(profile_image);
-                }*/
+                }
 
             }
 
